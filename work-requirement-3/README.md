@@ -51,3 +51,19 @@ After running the transaction, I used SELECT to check if the changes were saved 
 ### Transaction Result
 
 ![Transaction result](screenshots/transaction.png)
+
+## 4. Database Role and Permissions
+
+I created a database role called travel_viewer to limit what a user can do in my Travel Planner database.
+
+I gave the role permission to connect to the database and read information from the tables using SELECT. I did not give it permission to insert, update or delete data.
+
+I tested the permissions using has_table_privilege() on the trips table.
+
+The results showed that the role could read data, but could not add, change or delete anything.
+
+I think this is useful because some users only need to view information, and they should not be able to make changes to the database.
+
+### Permission Test
+
+![Role permissions](screenshots/role_permissions.png)
