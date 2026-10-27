@@ -67,3 +67,54 @@ I think this is useful because some users only need to view information, and the
 ### Permission Test
 
 ![Role permissions](screenshots/role_permissions.png)
+
+## 5. Database Backup and Restore
+
+I created a backup of my `travel_planner_test` database using DBeaver.
+
+I selected the complete backup option and used the Custom format. I saved the backup as `travel_planner_backup.backup`.
+
+To test the backup, I created a separate database called `travel_planner_restored`. I then used DBeaver's Restore tool to restore the backup into the new database.
+
+After restoring it, I checked that all five tables were there and used SQL queries to count the records.
+
+The restored database contained:
+
+- users: 5 records
+- trips: 8 records
+- destinations: 15 records
+- trip_destinations: 15 records
+- activities: 14 records
+
+In total, the restored database contained 57 records.
+
+The restore completed successfully, and I could see the tables and their data in the new database. This shows that the backup can be used to recover the database.
+
+### How to Create a Backup
+
+1. Right-click `travel_planner_test` in DBeaver.
+2. Select Tools → Backup.
+3. Select Complete backup.
+4. Choose Custom as the backup format.
+5. Save the file as `travel_planner_backup.backup`.
+6. Click Start.
+
+### How to Restore the Backup
+
+1. Create a new database called `travel_planner_restored`.
+2. Right-click the new database and select Tools → Restore.
+3. Select Custom as the format.
+4. Choose the `travel_planner_backup.backup` file.
+5. Select Discard objects owner.
+6. Click Start.
+7. Check that the tables and data have been restored.
+
+### Screenshots
+
+**Backup completed**
+
+![Backup created](screenshots/backup_created.png)
+
+**Restored database**
+
+![Restored database](screenshots/backup_restored.png)
