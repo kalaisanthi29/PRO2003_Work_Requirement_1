@@ -37,3 +37,17 @@ The execution time was lower in the second test, but I cannot say that the index
 ### After Adding the Index
 
 ![After index](screenshots/index_after.png)
+
+## 3. Transaction
+
+I created a transaction to update two things in the trips table.
+
+I used trip_id 4, which was originally called Exploring Japan. I changed the name to Japan Adventure and extended the end date from 15 March 2027 to 20 March 2027.
+
+I used BEGIN to start the transaction and COMMIT to save both changes together. If something went wrong before committing, I could use ROLLBACK to undo the changes.
+
+After running the transaction, I used SELECT to check if the changes were saved correctly. Both updates worked, and the trip now has the new name and end date.
+
+### Transaction Result
+
+![Transaction result](screenshots/transaction.png)
